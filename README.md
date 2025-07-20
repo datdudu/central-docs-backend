@@ -27,7 +27,19 @@ API RESTful para upload, ingestão, consulta e histórico de datasets (CSV/PDF),
 - Jest + Supertest para testes
 
 ---
+## Fluxograma do Backend
 
+## Fluxograma do Backend
+
+```mermaid
+flowchart TD
+    A[Usuário] --> B[Registro/Login]
+    B --> C[Upload de Dataset]
+    C --> D[Ingestão de Dados]
+    D --> E[Consulta/Listagem]
+    E --> F[Registro de Query]
+    F --> G[Histórico de Queries]
+```
 ## ⚙️ Como rodar o projeto
 
 ### 1. Clone o repositório
