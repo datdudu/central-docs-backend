@@ -79,18 +79,19 @@ describe('API Central Docs', () => {
     // Pode ser vazio se não houver "João" no CSV, mas não deve dar erro
   });
 
-  it('deve registrar uma query simulada', async () => {
-    const res = await request(server)
-      .post('/queries')
-      .set('Authorization', `Bearer ${token}`)
-      .send({
-        pergunta: 'Qual a idade de João?',
-        resposta: '30'
-      });
-    expect(res.statusCode).toBe(201);
-    expect(res.body).toHaveProperty('pergunta', 'Qual a idade de João?');
-    expect(res.body).toHaveProperty('resposta', '30');
-  });
+it('deve registrar uma query com resposta automática da IA', async () => {
+  const res = await request(server)
+    .post('/queries')
+    .set('Authorization', `Bearer ${token}`)
+    .send({
+      pergunta: 'Qual a idade de João?',
+      datasetId // opcional, se quiser testar com contexto
+    });
+  expect(res.statusCode).toBe(201);
+  expect(res.body).toHaveProperty('pergunta', 'Qual a idade de João?');
+  expect(res.body).toHaveProperty('resposta');
+  expect(typeof res.body.resposta).toBe('string');
+});
 
   it('deve listar queries feitas pelo usuário', async () => {
     const res = await request(server)
