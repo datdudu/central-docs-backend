@@ -38,7 +38,7 @@ flowchart TD
     B --> C[Upload de Dataset]
     C --> D[Ingestão de Dados]
     D --> E[Consulta/Listagem]
-    E --> F[Registro de Query (resposta IA)]
+    E --> F[Registro de Query]
     F --> G[Histórico de Queries]
 ```
 
