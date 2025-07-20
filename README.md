@@ -58,38 +58,16 @@ DATABASE_URL=postgres://postgres:admin@localhost:5432/centraldocs
 JWT_SECRET=12345678
 PORT=3000
 ```
-
-### 3. Suba o banco de dados com Docker
-
-```bash
-docker compose up db -d
-```
-
-### 4. Instale as dependências
+### 3. Instale as dependências
 
 ```bash
 npm install
 ```
-
-### 5. Rode as migrações do Prisma
-
-```bash
-npx prisma migrate dev --name init
-```
-
-### 6. Inicie a aplicação
-
-```bash
-npm run dev
-```
-
-Ou rode tudo com Docker:
+### 4. Rode tudo com Docker
 
 ```bash
 docker compose up --build
 ```
-
----
 
 ## 🧪 Rodando os testes
 
